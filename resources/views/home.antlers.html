@@ -1,0 +1,50 @@
+
+<article class="container mx-auto max-w-6xl">
+    <div class="text-4xl mb-8 text-center uppercase tracking-widest">
+        {{ title }}
+    </div>
+    {{ content | widont }}
+    <p></p>
+    <div class="">
+        {{ comps }}
+        <div class="pt-4 pb-12">
+            <div class="text-center mb-4">
+                <h3 class="text-5xl font-black font-noto">{{ name }}</h3>
+            </div>
+            <div class="text-center">
+                <div class="font-noto">
+                    <a href="http://{{ website }}" target="_blank"  class="hover:text-gray-400">{{ website }}</a>
+                </div>
+            </div>
+            <div class="flex flex-row justify-center mb-4">
+                {{ if instagram }}
+                    <a href="https://instagram.com/{{ instagram}}" target="_blank"><i class="fa-brands fa-instagram fa-2x p-2 hover:text-gray-400"></i></a>
+                {{ /if }}
+                {{ if facebook }}
+                    <a href="https://facebook.com/{{ instagram}}" target="_blank"><i class="fa-brands fa-facebook fa-2x p-2 hover:text-gray-400"></i></a>
+                {{ /if }}
+            </div>
+            {{ screenshot }}
+            <div>
+                <a href="{{ website }}" target="_blank" >
+                    <img src="{{ url }}" alt="" class="shadow-xl rounded-lg" >
+                </a>
+            </div>
+            {{ /screenshot }}
+            {{ if social_media_samples }}
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-8">
+                <div class="col-span-2 md:col-span-4 text-center text-2xl">Social Media Samples</div>
+                {{ social_media_samples }}
+                    <a href="{{ post_url }}" target="_blank">
+                        {{ post_image }}
+                        <img class="h-auto max-w-full rounded-lg" src="{{ url }}" alt="">
+                        {{ /post_image }}
+                    </a>
+                {{ /social_media_samples }}
+            </div>
+            {{ /if }}
+        </div>
+        {{ /comps }}
+    </div>
+</article>
+

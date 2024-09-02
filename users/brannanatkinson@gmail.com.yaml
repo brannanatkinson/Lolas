@@ -1,0 +1,8 @@
+name: Brannan
+super: true
+id: 183fe885-14cb-4394-9734-c8c66b4b918c
+password_hash: $2y$12$.aiPKIhXhQNHNFwNiSks8uXxdh7sB96LXtul/3ocleJ0etcYUnh5i
+preferences:
+  collections:
+    pages:
+      after_save: continue_editing

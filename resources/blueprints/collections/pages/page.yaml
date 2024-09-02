@@ -1,0 +1,128 @@
+title: Page
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: content
+            field:
+              type: markdown
+              display: Content
+              localizable: true
+          -
+            handle: template
+            field:
+              type: template
+              display: Template
+              localizable: true
+          -
+            handle: comps
+            field:
+              type: replicator
+              display: Comps
+              sets:
+                comp:
+                  display: Comp
+                  sets:
+                    details:
+                      display: Details
+                      fields:
+                        -
+                          handle: name
+                          field:
+                            type: text
+                            display: Name
+                        -
+                          handle: website
+                          field:
+                            type: text
+                            display: Website
+                        -
+                          handle: instagram
+                          field:
+                            type: text
+                            display: Instagram
+                        -
+                          handle: facebook
+                          field:
+                            type: text
+                            display: Facebook
+                        -
+                          handle: screenshot
+                          field:
+                            container: assets
+                            type: assets
+                            display: Screenshot
+                            folder: screenshots
+                        -
+                          handle: social_media_samples
+                          field:
+                            type: replicator
+                            display: 'Social Media Samples'
+                            sets:
+                              new_set_group:
+                                display: 'New Set Group'
+                                sets:
+                                  social_media_post:
+                                    display: 'Social Media Post'
+                                    hide: true
+                                    fields:
+                                      -
+                                        handle: post_image
+                                        field:
+                                          container: assets
+                                          folder: social-media
+                                          type: assets
+                                          display: 'Post Image'
+                                      -
+                                        handle: post_url
+                                        field:
+                                          type: text
+                                          display: 'Post URL'
+                        -
+                          handle: instagram_followers
+                          field:
+                            type: integer
+                            display: 'Instagram Followers'
+                        -
+                          handle: facebook_followers
+                          field:
+                            type: integer
+                            display: 'Facebook Followers'
+          -
+            handle: author
+            field:
+              type: users
+              display: Author
+              default: current
+              localizable: true
+              max_items: 1
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - pages
+              max_items: 1
+              listable: false
+              localizable: true
